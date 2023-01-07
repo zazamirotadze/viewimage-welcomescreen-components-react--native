@@ -1,13 +1,18 @@
 import React from 'react'
-import { ImageBackground, StyleSheet, Image, View, Text } from "react-native";
+import { ImageBackground, StyleSheet, Image, View, Text, TouchableOpacity } from "react-native";
 
 const LogoImage = require('./assets/chair.jpg');
-const ViewImageScreen  = () => {
+const ViewImageScreen  = ({navigation}) => {
   return (
     <View style={styles.container} >
         <View style={styles.boxesview}>
-            <View style={styles.redBox}/>
-            <View style={styles.blueBox}/>
+          <TouchableOpacity 
+            style={styles.redBox}
+            onPress={() => navigation.navigate('WelcomeScreen')}
+          >
+            <Text style={{color:"white"}} >Go Back</Text>
+          </TouchableOpacity>
+          <View style={styles.blueBox}/>
         </View>
         <Image source={LogoImage}    style={styles.logoImage}/>
     </View>
@@ -37,7 +42,10 @@ const styles = StyleSheet.create({
     redBox:{
       backgroundColor:"#fc5c65",
       alignSelf:"stretch",
-      width:"15%"
+      width:"15%",
+      justifyContent:"center",
+      alignItems:"center",
+      zIndex:100
     },
     blueBox:{
       backgroundColor:"#4ECDC4",

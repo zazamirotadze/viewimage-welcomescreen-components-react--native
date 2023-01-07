@@ -1,11 +1,11 @@
 import React from "react";
-import { ImageBackground, StyleSheet, Image, View, Text } from "react-native";
+import { ImageBackground, StyleSheet, Image, View, Text,  TouchableOpacity } from "react-native";
 
 
 const backgorundImage = require('./assets/background.jpg');
 const LogoImage = require('./assets/logo-red.png');
 
-const WelcomeScreen = () => (
+const WelcomeScreen = ({navigation}) => (
   <View style={styles.container}>
     <ImageBackground source={backgorundImage} resizeMode="cover" style={styles.image}>
       <View style={styles.textlogoview}>
@@ -14,7 +14,12 @@ const WelcomeScreen = () => (
       </View>
       <View style={styles.rectanglesview}>
         <View style={styles.redBox} />
-        <View style={styles.blueBox}/>
+        <TouchableOpacity
+          onPress={() => navigation.navigate('ViewImageScreen')}
+          style={styles.blueBox}
+         >
+          <Text style={{color:"white"}}>Click here to Change the Route</Text>
+        </TouchableOpacity>
       </View>
     </ImageBackground>
   </View>
@@ -52,6 +57,8 @@ const styles = StyleSheet.create({
   blueBox:{
     backgroundColor:"#4ECDC4",
     height:"50%",
+    justifyContent:"center",
+    alignItems:"center"
   }
 });
 
