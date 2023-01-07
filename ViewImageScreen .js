@@ -22,7 +22,8 @@ const ViewImageScreen  = ({navigation}) => {
 const styles = StyleSheet.create({
     container: {
       flex: 1,
-      backgroundColor:"black"
+      backgroundColor:"black",
+      zIndex:-100
     },
     logoImage: {
       width:"100%",
