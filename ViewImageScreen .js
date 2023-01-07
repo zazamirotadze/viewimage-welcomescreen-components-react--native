@@ -27,7 +27,8 @@ const styles = StyleSheet.create({
     logoImage: {
       width:"100%",
       height:"100%",
-      resizeMode:"contain"
+      resizeMode:"contain",
+      zIndex:-100
     },
     boxesview:{
       position: "absolute",
